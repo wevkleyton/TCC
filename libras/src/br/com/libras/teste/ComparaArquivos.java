@@ -24,8 +24,8 @@ public class ComparaArquivos {
                         byte_arquivo1 = isf1.read();
                         byte_arquivo2 = isf2.read();
                         if (byte_arquivo1 != byte_arquivo2) {
-                            System.out.println("Arquivo da central: " + byte_arquivo1);
-                            System.out.println("Arquivo da filial: " + byte_arquivo2);
+                            System.out.println("Arquivo da central: " + isf1.toString());
+                            System.out.println("Arquivo da filial: " + isf2.toString());
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
