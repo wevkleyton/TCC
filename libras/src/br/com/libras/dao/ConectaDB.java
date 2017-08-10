@@ -6,23 +6,28 @@ import java.util.logging.Logger;
 
 public class ConectaDB {
 
-    public ConectaDB() {
-            private static final Logger LOG = Logger.getLogger(null);
+    @SuppressWarnings("unused")
+	public ConectaDB() {
+            final Logger LOG = Logger.getLogger(null);
         try {
             String drive = "org.postgresql.Driver";
             String user = "";
             String password = "";
             String url = "jdbc:postgresql://localhost:5432/libras";
-            
             Class.forName(url);
             Connection con = DriverManager.getConnection(url, user, password);
             LOG.warning("Conexão realizada com SUCESSO!");
 
 
         } catch (Exception e) {
-            // TODO: handle exception
+           e.printStackTrace();
         }
     }
 
+    @SuppressWarnings("unused")
+	private void salvar(){
+    	ConectaDB conectaDB = ConectaDB.this;
+    	
+    }
 
 }
