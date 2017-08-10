@@ -1,12 +1,10 @@
 package br.com.libras.teste;
 
-import java.awt.Panel;
 
+public class TesteDeImagem {
 
-@SuppressWarnings("serial")
-public class TesteDeImagem extends Panel {
+    public static void main(String[] args) {
+        System.out.println("teste de aplicação");
+    }
 
-  public static void main(String[] args) {
-    System.out.println("teste Running");
-}
 }
