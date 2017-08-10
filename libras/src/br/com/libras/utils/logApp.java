@@ -13,4 +13,5 @@ public class logApp {
      JOptionPane.showMessageDialog(null, msg);
      System.out.println("A menssagem foi enviada com sucesso!!");
     }
+    
 }
