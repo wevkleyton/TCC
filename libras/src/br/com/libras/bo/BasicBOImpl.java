@@ -7,7 +7,6 @@ public class BasicBOImpl {
 	@SuppressWarnings("unused")
 	private void salvaImagen(){
 		verificaImagenGif verifica = new verificaImagenGif();
-		verifica;
 	}
 
 }
