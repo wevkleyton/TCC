@@ -3,7 +3,7 @@
     <state version="4" enabled="true" />
     <globalmarks />
     <filemarks>
-      <file name="/Dummy.txt" timestamp="1502483031199">
+      <file name="/Dummy.txt" timestamp="1502486573121">
         <mark key="[" line="0" column="0" />
       </file>
       <file name="/vcs.xml" timestamp="1502485296951" />
@@ -16,10 +16,10 @@
         <mark key="]" line="8" column="39" />
         <mark key="." line="8" column="39" />
       </file>
-      <file name="$USER_HOME$/git/TCC/libras/src/br/com/libras/bo/verificaImagenGif.java" timestamp="1502482673993">
-        <mark key="[" line="15" column="19" />
-        <mark key="]" line="15" column="19" />
-        <mark key="." line="15" column="19" />
+      <file name="$USER_HOME$/git/TCC/libras/src/br/com/libras/bo/verificaImagenGif.java" timestamp="1502486370409">
+        <mark key="[" line="14" column="8" />
+        <mark key="]" line="14" column="8" />
+        <mark key="." line="14" column="8" />
         <mark key="^" line="13" column="11" />
       </file>
     </filemarks>
@@ -29,13 +29,13 @@
         <text encoding="base64">ICAgIHB1YmxpYyBzdGF0aWMgdm9pZCBtYWluKFN0cmluZyBhcmdzW10pIHsKICAgICAgICAvKiBTZXQgdGhlIE5pbWJ1cyBsb29rIGFuZCBmZWVsICovCg==</text>
       </register>
       <register name="&quot;" type="4">
-        <text>l</text>
+        <text>}</text>
       </register>
       <register name="w" type="4">
         <text>he fó9gwr 9gw</text>
       </register>
       <register name="-" type="4">
-        <text>l</text>
+        <text>}</text>
       </register>
     </registers>
     <search>
