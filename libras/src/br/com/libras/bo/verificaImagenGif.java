@@ -14,4 +14,8 @@ public class verificaImagenGif {
 			System.out.println(file.getAbsolutePath());
 		}
 	}
+
+	public static void main (String Args[]){
+
+	}
 }
