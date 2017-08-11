@@ -18,7 +18,8 @@ public class verificaImagenGif {
 	}
 
 	public static void main (String Args[]){
-
+		verificaImagenGif verifica = new verificaImagenGif();
+		System.out.println(verifica.verificaImagen());
 
 	}
 }
