@@ -3,39 +3,69 @@
     <state version="4" enabled="true" />
     <globalmarks />
     <filemarks>
-      <file name="/Dummy.txt" timestamp="1502486573121">
+      <file name="$USER_HOME$/git/TCC/libras/src/br/com/libras/teste/testeDecodigos.java" timestamp="1502487828856">
+        <mark key="[" line="1" column="0" />
+        <mark key="]" line="2" column="0" />
+        <mark key="." line="2" column="0" />
+      </file>
+      <file name="/Dummy.txt" timestamp="1502488174417">
         <mark key="[" line="0" column="0" />
       </file>
       <file name="/vcs.xml" timestamp="1502485296951" />
-      <file name="$USER_HOME$/git/TCC/libras/src/br/com/libras/gui/FImagens.java" timestamp="1502479560569">
-        <mark key="]" line="121" column="0" />
-        <mark key="." line="121" column="0" />
+      <file name="$USER_HOME$/git/TCC/libras/src/br/com/libras/gui/FImagens.java" timestamp="1502488498846">
+        <mark key="[" line="125" column="0" />
+        <mark key="]" line="125" column="0" />
+        <mark key="." line="125" column="0" />
+      </file>
+      <file name="/a.dummy" timestamp="1502487057200">
+        <mark key="[" line="0" column="0" />
       </file>
       <file name="$USER_HOME$/git/TCC/libras/src/br/com/libras/teste/TesteDeImagem.java" timestamp="1502479789998">
         <mark key="[" line="8" column="39" />
         <mark key="]" line="8" column="39" />
         <mark key="." line="8" column="39" />
       </file>
-      <file name="$USER_HOME$/git/TCC/libras/src/br/com/libras/bo/verificaImagenGif.java" timestamp="1502486370409">
-        <mark key="[" line="14" column="8" />
+      <file name="$USER_HOME$/git/TCC/libras/src/br/com/libras/bo/verificaImagenGif.java" timestamp="1502488442238">
+        <mark key="'" line="21" column="27" />
+        <mark key="[" line="21" column="27" />
         <mark key="]" line="14" column="8" />
         <mark key="." line="14" column="8" />
-        <mark key="^" line="13" column="11" />
+        <mark key="^" line="14" column="8" />
+      </file>
+      <file name="$USER_HOME$/git/TCC/libras/src/br/com/libras/dao/ConectaDB.java" timestamp="1502487780480">
+        <mark key="[" line="42" column="2" />
+        <mark key="]" line="42" column="2" />
+        <mark key="." line="42" column="2" />
       </file>
     </filemarks>
-    <jumps />
+    <jumps>
+      <jump line="22" column="27" filename="$USER_HOME$/git/TCC/libras/src/br/com/libras/bo/verificaImagenGif.java" />
+      <jump line="9" column="13" filename="$USER_HOME$/git/TCC/libras/src/br/com/libras/gui/FImagens.java" />
+    </jumps>
     <registers>
       <register name="1" type="2">
-        <text encoding="base64">ICAgIHB1YmxpYyBzdGF0aWMgdm9pZCBtYWluKFN0cmluZyBhcmdzW10pIHsKICAgICAgICAvKiBTZXQgdGhlIE5pbWJ1cyBsb29rIGFuZCBmZWVsICovCg==</text>
+        <text encoding="base64">cHVibGljIGNsYXNzIHRlc3RlRGVjb2RpZ29zIHsK</text>
       </register>
-      <register name="&quot;" type="4">
-        <text>}</text>
+      <register name="&quot;" type="2">
+        <text encoding="base64">cHVibGljIGNsYXNzIHRlc3RlRGVjb2RpZ29zIHsK</text>
+      </register>
+      <register name="2" type="4">
+        <text encoding="base64">ICBwdWJsaWMgc3RhdGljIHZvaWQgbWFpbihTdHJpbmdbXSBhcmdzKSB7CgogICAgfQ==</text>
+      </register>
+      <register name="3" type="2">
+        <text encoding="base64">ICAgIAkK</text>
+      </register>
+      <register name="4" type="8">
+        <text>)</text>
+      </register>
+      <register name="5" type="2">
+        <text encoding="base64">ICAgIHB1YmxpYyBzdGF0aWMgdm9pZCBtYWluKFN0cmluZyBhcmdzW10pIHsKICAgICAgICAvKiBTZXQgdGhlIE5pbWJ1cyBsb29rIGFuZCBmZWVsICovCg==</text>
       </register>
       <register name="w" type="4">
         <text>he fó9gwr 9gw</text>
       </register>
       <register name="-" type="4">
-        <text>}</text>
+        <text>;</text>
       </register>
     </registers>
     <search>
@@ -55,14 +85,20 @@
       <shortcut-conflict owner="vim">
         <text>ctrl pressed X</text>
       </shortcut-conflict>
-      <shortcut-conflict owner="vim">
+      <shortcut-conflict owner="ide">
         <text>ctrl pressed D</text>
       </shortcut-conflict>
-      <shortcut-conflict owner="vim">
+      <shortcut-conflict owner="ide">
         <text>ctrl pressed C</text>
       </shortcut-conflict>
       <shortcut-conflict owner="vim">
         <text>ctrl pressed S</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed O</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed F</text>
       </shortcut-conflict>
     </shortcut-conflicts>
   </component>
