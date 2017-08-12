@@ -7,12 +7,8 @@
           <option name="userName" value="" />
         </UrlAndUserName>
         <UrlAndUserName>
-          <option name="url" value="http://github.com/wevkleyton/Projetos.git" />
+          <option name="url" value="https://github.com/wevkleyton/Projetos.git" />
           <option name="userName" value="" />
-        </UrlAndUserName>
-        <UrlAndUserName>
-          <option name="url" value="http://github.com" />
-          <option name="userName" value="kleyton.cpd@gmail.com" />
         </UrlAndUserName>
       </list>
     </option>
