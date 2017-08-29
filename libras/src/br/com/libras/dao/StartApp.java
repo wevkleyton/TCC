@@ -12,6 +12,7 @@ public class StartApp {
 
 		LoginLibras loginLibras = new LoginLibras();
 		loginLibras.setVisible(true);
+		
 
 	}
 }
