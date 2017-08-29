@@ -19,6 +19,38 @@ public class Video {
     private Long id;
 
     private String nome;
+    private byte imagen;
+    private byte video;
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public byte getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte imagen) {
+        this.imagen = imagen;
+    }
+
+    public byte getVideo() {
+        return video;
+    }
+
+    public void setVideo(byte video) {
+        this.video = video;
+    }
 }
