@@ -5,9 +5,16 @@
  */
 package br.com.libras.gui;
 
+import br.com.libras.bo.ConsultaSHA;
+
+import javax.swing.*;
+import java.lang.invoke.ConstantCallSite;
+
 /**
  *
- * @author wev
+ * @author wev kleyton
+ * Data : 01/09/2017
+ * Descrição : Classe de Login do sistema
  */
 public class Login extends javax.swing.JFrame {
 
@@ -32,7 +39,7 @@ public class Login extends javax.swing.JFrame {
         jLabelNome = new javax.swing.JLabel();
         jLabelSenha = new javax.swing.JLabel();
         jTextFieldNome = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPasswordFieldSenha = new javax.swing.JPasswordField();
         jButtonEntrar = new javax.swing.JButton();
         jButtonSair = new javax.swing.JButton();
         jLabelImagen = new javax.swing.JLabel();
@@ -44,18 +51,23 @@ public class Login extends javax.swing.JFrame {
         jLabelNome.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNome.setText("Nome :");
         jPanel1.add(jLabelNome);
-        jLabelNome.setBounds(90, 280, 49, 15);
+        jLabelNome.setBounds(90, 270, 49, 15);
 
         jLabelSenha.setForeground(new java.awt.Color(255, 255, 255));
         jLabelSenha.setText("Senha :");
         jPanel1.add(jLabelSenha);
         jLabelSenha.setBounds(90, 320, 54, 15);
         jPanel1.add(jTextFieldNome);
-        jTextFieldNome.setBounds(160, 280, 150, 19);
-        jPanel1.add(jPasswordField1);
-        jPasswordField1.setBounds(160, 320, 150, 19);
+        jTextFieldNome.setBounds(160, 250, 150, 40);
+        jPanel1.add(jPasswordFieldSenha);
+        jPasswordFieldSenha.setBounds(160, 310, 150, 40);
 
         jButtonEntrar.setText("Entrar");
+        jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEntrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButtonEntrar);
         jButtonEntrar.setBounds(100, 370, 78, 25);
 
@@ -90,6 +102,41 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButtonSairActionPerformed
+
+    public void verificaSenha(String usuario, String senha){
+
+        String user = "wev";
+        String senha2 = "123";
+        if (usuario.equals(user)){ //verifica se senha e igual a consulta do banco de dados
+            if (senha.equals(ConsultaSHA.geraHasSenha(senha2))){
+                JOptionPane.showConfirmDialog(null, "Desenha EWntrar no Sistema? ", "Teste", JOptionPane.YES_NO_OPTION);
+                FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
+                fPrincipalLibras.setVisible(true);
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Senha Incorreta!", "Erro" , JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuario Incorreto!", "Erro" , JOptionPane.ERROR_MESSAGE);
+
+        }
+
+    }
+    private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
+        // TODO add your handling code here:
+        if (!jTextFieldNome.getText().isEmpty()){
+            if (!jPasswordFieldSenha.getText().isEmpty()){
+                String senha = ConsultaSHA.geraHasSenha(jPasswordFieldSenha.getText());
+                verificaSenha(jTextFieldNome.getText(), senha );
+            }else{
+                JOptionPane.showMessageDialog(null, "Você Tem Que Informar Uma Senha!", "Atenção", JOptionPane.WARNING_MESSAGE);
+                jPasswordFieldSenha.requestFocus();
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Você Tem Que Informar Um Usuario!", "Atenção" , JOptionPane.WARNING_MESSAGE);
+            jTextFieldNome.requestFocus();
+        }
+    }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,7 +180,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelSenha;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordFieldSenha;
     private javax.swing.JTextField jTextFieldNome;
     // End of variables declaration//GEN-END:variables
 }

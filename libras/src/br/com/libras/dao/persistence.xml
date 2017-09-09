@@ -10,7 +10,7 @@
             <property name="hibernate.connection.username" value="dbadmin"/>
             <property name="hibernate.connection.password" value="123456"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/ExemplosJPA"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://10.2.2.1:5432/bancoPI"/>
             <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
             <property name="hibernate.show_sql" value="true"/>
         </properties>
