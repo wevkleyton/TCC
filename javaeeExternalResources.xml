@@ -1,0 +1,5 @@
+<application>
+  <component name="ExternalResourceManagerImpl">
+    <resource url="http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" location="$USER_HOME$/.IdeaIC2017.2/system/extResources/b51c2e86_persistence_2_0.xsd" />
+  </component>
+</application>
