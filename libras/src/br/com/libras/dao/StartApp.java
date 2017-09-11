@@ -7,12 +7,11 @@ import br.com.libras.gui.LoginLibras;
 public class StartApp {
 
 	public static void main(String[] args) {
-		//Login login = new Login();
-		//login.setVisible(true);
+		Login login = new Login();
+		login.setVisible(true);
 
-		LoginLibras loginLibras = new LoginLibras();
-		loginLibras.setVisible(true);
-		
+		//LoginLibras loginLibras = new LoginLibras();
+		//loginLibras.setVisible(true);
 
 	}
 }
