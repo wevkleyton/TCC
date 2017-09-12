@@ -6,13 +6,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
-public class ConectaDB {
+public class ConectaDAOJDBC {
 
     final Logger LOG = Logger.getLogger(null);
     Connection con;
 
     @SuppressWarnings("unused")
-	public ConectaDB() {
+	public ConectaDAOJDBC() {
 
         try {
             String drive = "org.postgresql.Driver";
