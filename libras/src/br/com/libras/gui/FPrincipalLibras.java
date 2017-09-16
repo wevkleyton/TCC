@@ -16,6 +16,7 @@ public class FPrincipalLibras extends javax.swing.JFrame {
      */
     public FPrincipalLibras() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -92,6 +93,8 @@ public class FPrincipalLibras extends javax.swing.JFrame {
 
     private void jMenuItemIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemIniciarActionPerformed
         // TODO add your handling code here:
+        FImagens fImagens = new FImagens();
+        fImagens.setVisible(true);
         
     }//GEN-LAST:event_jMenuItemIniciarActionPerformed
 
