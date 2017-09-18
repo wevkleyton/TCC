@@ -1,3 +1,4 @@
+/*
 package br.com.libras.bean;
 
 import javax.annotation.Generated;
@@ -18,7 +19,7 @@ import java.lang.annotation.Retention;
  *  - As variaveis que serão persistidas no banco de dados desem ser declaradas como private, protected ou packege-private e podem ser acessadas diretamente por seus
  *  metodos (getters e setters)
  */
-
+/*
 @Entity
 public class Video {
 
@@ -62,3 +63,4 @@ public class Video {
         this.video = video;
     }
 }
+*/

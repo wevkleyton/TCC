@@ -1,3 +1,4 @@
+/*
 package br.com.libras.utils;
 
 import br.com.libras.bean.Usuario;
@@ -66,3 +67,4 @@ public class TestaPersistencia {
 
 
 }
+*/
