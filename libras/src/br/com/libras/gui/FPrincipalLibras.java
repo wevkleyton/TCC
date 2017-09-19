@@ -5,6 +5,9 @@
  */
 package br.com.libras.gui;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  *
  * @author wev
@@ -16,6 +19,7 @@ public class FPrincipalLibras extends javax.swing.JFrame {
      */
     public FPrincipalLibras() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -41,7 +45,7 @@ public class FPrincipalLibras extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 654, Short.MAX_VALUE)
+            .addGap(0, 723, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -62,6 +66,11 @@ public class FPrincipalLibras extends javax.swing.JFrame {
 
         jMenuItemSair.setMnemonic('s');
         jMenuItemSair.setText("Sair");
+        jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSairActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItemSair);
 
         jMenuBar1.add(jMenu1);
@@ -80,7 +89,9 @@ public class FPrincipalLibras extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,8 +103,13 @@ public class FPrincipalLibras extends javax.swing.JFrame {
 
     private void jMenuItemIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemIniciarActionPerformed
         // TODO add your handling code here:
-        
+        FimagenNew fimagenNew = new FimagenNew(this);
     }//GEN-LAST:event_jMenuItemIniciarActionPerformed
+
+    private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuItemSairActionPerformed
 
     /**
      * @param args the command line arguments

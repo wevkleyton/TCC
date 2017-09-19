@@ -5,8 +5,6 @@
  */
 package br.com.libras.gui;
 
-import javax.swing.*;
-
 /**
  *
  * @author wev
@@ -41,7 +39,7 @@ public class LoginLibras extends javax.swing.JFrame {
         jButtonEntrar = new javax.swing.JButton();
         jButtonSair = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/libras/resources/libras.png"))); // NOI18N
 
@@ -80,7 +78,7 @@ public class LoginLibras extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel2.add(jPasswordFieldSenha, gridBagConstraints);
 
-        jButtonEntrar.setText("Entrar ?");
+        jButtonEntrar.setText("Entrar");
         jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEntrarActionPerformed(evt);
@@ -94,7 +92,7 @@ public class LoginLibras extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel2.add(jButtonEntrar, gridBagConstraints);
 
-        jButtonSair.setText("Sair ?");
+        jButtonSair.setText("Sair ");
         jButtonSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSairActionPerformed(evt);
@@ -147,7 +145,9 @@ public class LoginLibras extends javax.swing.JFrame {
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Tela em Construção!!!");
+        FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
+        fPrincipalLibras.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     /**

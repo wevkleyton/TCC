@@ -1,3 +1,4 @@
+/*
 package br.com.libras.bean;
 
 import javax.annotation.Generated;
@@ -7,10 +8,18 @@ import javax.persistence.Id;
 import java.lang.annotation.Retention;
 
 /**
- * Autor: Wev Kleyton 27/08/2017
- * Criação do Bean de Video
+  * Autor: Wev Kleyton 27/08/2017
+  * OBS: Para utilização do JPA a classe deve:
+ *  - Ser anotada como javax.persistence.Entity
+ *  - A classe deve ter um contrutor sem argumento
+ *  - A classe assim como os metodos ou instancias de variaveis de persistencia, não pedem ser declaradas como "final"
+ *  - Se uma classe e "passada" como valor em um objeto individual, ela deve ser implementada como "Serializable Interface"
+ *  - Entities podem extender  classes definidas ou não como Entities. Tambem e possivel que classes que não são definidas como Entity extendam classes que são definidas
+ *  como Entity
+ *  - As variaveis que serão persistidas no banco de dados desem ser declaradas como private, protected ou packege-private e podem ser acessadas diretamente por seus
+ *  metodos (getters e setters)
  */
-
+/*
 @Entity
 public class Video {
 
@@ -54,3 +63,4 @@ public class Video {
         this.video = video;
     }
 }
+*/
