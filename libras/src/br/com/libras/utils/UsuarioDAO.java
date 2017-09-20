@@ -2,6 +2,7 @@ package br.com.libras.utils;
 
 import br.com.libras.bean.Usuario;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -76,16 +77,6 @@ public class UsuarioDAO {
             entityManager.getTransaction().rollback();
         }
     }
-    /*
-    public void removeById(){
-        try{
-            Usuario usuario = getById(id);
-            remove(usuario);
-        }catch (Exception ex){
-            ex.printStackTrace();
-            entityManager.getTransaction().rollback();
-        }
-    }*/
 
 }
 
