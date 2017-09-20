@@ -5,9 +5,6 @@
  */
 package br.com.libras.gui;
 
-import javax.swing.*;
-import java.awt.*;
-
 /**
  *
  * @author wev
@@ -103,7 +100,8 @@ public class FPrincipalLibras extends javax.swing.JFrame {
 
     private void jMenuItemIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemIniciarActionPerformed
         // TODO add your handling code here:
-        FimagenNew fimagenNew = new FimagenNew(this);
+        FimagenNew fimagenNew = new FimagenNew(null, rootPaneCheckingEnabled);
+        fimagenNew.setVisible(true);
     }//GEN-LAST:event_jMenuItemIniciarActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
