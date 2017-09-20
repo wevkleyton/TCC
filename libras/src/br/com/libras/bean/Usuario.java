@@ -16,6 +16,8 @@ import javax.persistence.Id;
  *  como Entity
  *  - As variaveis que serão persistidas no banco de dados desem ser declaradas como private, protected ou packege-private e podem ser acessadas diretamente por seus
  *  metodos (getters e setters)
+ *
+ *  http://www.devmedia.com.br/persistindo-objetos-com-java-hibernate-e-postgresql/4149
  */
 
 @Entity
