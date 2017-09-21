@@ -1,5 +1,6 @@
 <application>
   <component name="DebuggerSettings">
+    <option name="RUN_HOTSWAP_AFTER_COMPILE" value="RunHotswapAlways" />
     <filter>
       <option name="PATTERN" value="com.sun.*" />
       <option name="ENABLED" value="true" />
@@ -64,12 +65,5 @@
   <component name="XDebuggerSettings">
     <data-views />
     <general />
-    <debuggers>
-      <debugger id="kotlin_debugger">
-        <configuration>
-          <option name="DEBUG_IS_FILTER_FOR_STDLIB_ALREADY_ADDED" value="true" />
-        </configuration>
-      </debugger>
-    </debuggers>
   </component>
 </application>
