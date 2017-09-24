@@ -9,6 +9,11 @@ import java.security.MessageDigest;
  */
 public interface ConsultaSHA {
 
+    /**
+     *
+     * @param password
+     * @return
+     */
     public static String geraHasSenha(String password){
 
         String senha = null;
