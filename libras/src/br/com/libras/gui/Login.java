@@ -107,35 +107,35 @@ public class Login extends javax.swing.JFrame {
 
         String user = "wev";
         String senha2 = "123";
-        if (usuario.equals(user)){ //verifica se senha e igual a consulta do banco de dados
-            if (senha.equals(ConsultaSHA.geraHasSenha(senha2))){
-                JOptionPane.showConfirmDialog(null, "Desenha EWntrar no Sistema? ", "Teste", JOptionPane.YES_NO_OPTION);
-                FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
-                fPrincipalLibras.setVisible(true);
-                this.dispose();
-            }else{
-                JOptionPane.showMessageDialog(null, "Senha Incorreta!", "Erro" , JOptionPane.ERROR_MESSAGE);
-            }
-        }else{
-            JOptionPane.showMessageDialog(null, "Usuario Incorreto!", "Erro" , JOptionPane.ERROR_MESSAGE);
-
-        }
+//        if (usuario.equals(user)){ //verifica se senha e igual a consulta do banco de dados
+//            if (senha.equals(ConsultaSHA.geraHasSenha(senha2))){
+//                JOptionPane.showConfirmDialog(null, "Desenha EWntrar no Sistema? ", "Teste", JOptionPane.YES_NO_OPTION);
+//                FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
+//                fPrincipalLibras.setVisible(true);
+//                this.dispose();
+//            }else{
+//                JOptionPane.showMessageDialog(null, "Senha Incorreta!", "Erro" , JOptionPane.ERROR_MESSAGE);
+//            }
+//        }else{
+//            JOptionPane.showMessageDialog(null, "Usuario Incorreto!", "Erro" , JOptionPane.ERROR_MESSAGE);
+//
+//        }
 
     }
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         // TODO add your handling code here:
-        if (!jTextFieldNome.getText().isEmpty()){
-            if (!jPasswordFieldSenha.getText().isEmpty()){
-                String senha = ConsultaSHA.geraHasSenha(jPasswordFieldSenha.getText());
-                verificaSenha(jTextFieldNome.getText(), senha );
-            }else{
-                JOptionPane.showMessageDialog(null, "Você Tem Que Informar Uma Senha!", "Atenção", JOptionPane.WARNING_MESSAGE);
-                jPasswordFieldSenha.requestFocus();
-            }
-        }else{
-            JOptionPane.showMessageDialog(null, "Você Tem Que Informar Um Usuario!", "Atenção" , JOptionPane.WARNING_MESSAGE);
-            jTextFieldNome.requestFocus();
-        }
+//        if (!jTextFieldNome.getText().isEmpty()){
+//            if (!jPasswordFieldSenha.getText().isEmpty()){
+//                String senha = ConsultaSHA.geraHasSenha(jPasswordFieldSenha.getText());
+//                verificaSenha(jTextFieldNome.getText(), senha );
+//            }else{
+//                JOptionPane.showMessageDialog(null, "Você Tem Que Informar Uma Senha!", "Atenção", JOptionPane.WARNING_MESSAGE);
+//                jPasswordFieldSenha.requestFocus();
+//            }
+//        }else{
+//            JOptionPane.showMessageDialog(null, "Você Tem Que Informar Um Usuario!", "Atenção" , JOptionPane.WARNING_MESSAGE);
+//            jTextFieldNome.requestFocus();
+//        }
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     /**
