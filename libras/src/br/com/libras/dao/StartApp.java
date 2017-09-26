@@ -10,9 +10,6 @@ public class StartApp {
 		Login login = new Login();
 		login.setVisible(true);
 
-		//LoginLibras loginLibras = new LoginLibras();
-		//loginLibras.setVisible(true);
-
 	}
 }
 
