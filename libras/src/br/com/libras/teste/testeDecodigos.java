@@ -10,6 +10,7 @@ public class testeDecodigos {
 
         System.out.println(resultado == 0 ? true : false"teste de commit2");
         System.out.println(resultado == 0 ? true : false"teste de commit3");
+        System.out.println(resultado == 0 ? true : false"teste de commit4");
         
         
     }
