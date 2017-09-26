@@ -8,7 +8,7 @@ public class testeDecodigos {
         int resultado = JOptionPane.showConfirmDialog(null, "Deseja relamente cancelar ?",
                 "teste",JOptionPane.OK_CANCEL_OPTION);
 
-        System.out.println(resultado == 0 ? true : false"teste de commit1");
+        System.out.println(resultado == 0 ? true : false"teste de commit2");
         
         
     }
