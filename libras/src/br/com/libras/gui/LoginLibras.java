@@ -5,6 +5,13 @@
  */
 package br.com.libras.gui;
 
+import java.sql.ResultSet;
+
+import org.hibernate.metamodel.source.annotations.JPADotNames;
+
+import br.com.libras.bo.ConsultaSHA;
+import br.com.libras.dao.ConectaJDBC;
+
 /**
  *
  * @author wev
@@ -145,11 +152,20 @@ public class LoginLibras extends javax.swing.JFrame {
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         // TODO add your handling code here:
-    	
-    	
-        FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
-        fPrincipalLibras.setVisible(true);
-        dispose();
+    	if (!jTextFieldNome.getText().isEmpty()) {
+    		if(!jPasswordFieldSenha.getText().isEmpty()) {
+    			String user = jTextFieldNome.getText();
+    			ResultSet usuario = ConectaJDBC.Conecta("select nome from usuario where nome = " + user);
+    			System.out.println(usuario);
+    			
+    			FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
+    			fPrincipalLibras.setVisible(true);
+    			dispose();
+    		}else {
+    		}
+    	}else {
+    		
+    	}
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     /**
