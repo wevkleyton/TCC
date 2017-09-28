@@ -7,6 +7,8 @@ package br.com.libras.gui;
 
 import java.sql.ResultSet;
 
+import javax.swing.JOptionPane;
+
 import org.hibernate.metamodel.source.annotations.JPADotNames;
 
 import br.com.libras.bo.ConsultaSHA;
@@ -152,18 +154,30 @@ public class LoginLibras extends javax.swing.JFrame {
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         // TODO add your handling code here:
+    	String resultQueryNome = null,resultQuerySenha = null;
     	if (!jTextFieldNome.getText().isEmpty()) {
     		if(!jPasswordFieldSenha.getText().isEmpty()) {
-    			String user = jTextFieldNome.getText();
-    			ResultSet usuario = ConectaJDBC.Conecta("select nome from usuario where nome = " + user);
-    			System.out.println(usuario);
+    			try {
+    				ResultSet result = ConectaJDBC.Conecta("select nome from usuario where nome = '" + jTextFieldNome.getText() + "'");
+    				while (result.next()) {
+    					resultQueryNome = result.getString("nome");
+    				}
+    				if (!resultQueryNome.isEmpty() || resultQueryNome != null ) {
+    					
+    				}
+    			}catch (Exception e) {
+					// TODO: handle exception
+    				e.printStackTrace();
+				}
     			
-    			FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
-    			fPrincipalLibras.setVisible(true);
+//    			FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
+//    			fPrincipalLibras.setVisible(true);
     			dispose();
     		}else {
+    			JOptionPane.showMessageDialog(null, "Você Tem que Informar Uma Senha!", "Atenção" , JOptionPane.INFORMATION_MESSAGE);
     		}
     	}else {
+    		JOptionPane.showMessageDialog(null, "Você Tem que Informar Um Usuario!", "Atenção" , JOptionPane.INFORMATION_MESSAGE);
     		
     	}
     }//GEN-LAST:event_jButtonEntrarActionPerformed
