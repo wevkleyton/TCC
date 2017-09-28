@@ -154,27 +154,43 @@ public class LoginLibras extends javax.swing.JFrame {
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         // TODO add your handling code here:
+
     	String resultQueryNome = null,resultQuerySenha = null;
     	if (!jTextFieldNome.getText().isEmpty()) {
     		if(!jPasswordFieldSenha.getText().isEmpty()) {
     			try {
-    				ResultSet result = ConectaJDBC.Conecta("select nome from usuario where nome = '" + jTextFieldNome.getText() + "'");
-    				while (result.next()) {
-    					resultQueryNome = result.getString("nome");
+    				ResultSet resultNome = ConectaJDBC.Conecta("select nome from usuario where nome = '" + jTextFieldNome.getText() + "'");
+    				while (resultNome.next()) {
+    					resultQueryNome = resultNome.getString("nome");
     				}
-    				if (!resultQueryNome.isEmpty() || resultQueryNome != null ) {
+    				ResultSet resultSenha = ConectaJDBC.Conecta("select nome from usuario where nome = '" + jTextFieldNome.getText() + "'");
+    				while (resultNome.next()) {
+    					resultQuerySenha = resultNome.getString("senha");
+    				}
+    				if (!resultQueryNome.isEmpty() || !resultQuerySenha.isEmpty() ) {
+    					if (resultQueryNome == jTextFieldNome.getText()) {
+    						if (resultQuerySenha == ConsultaSHA.geraHasSenha(jPasswordFieldSenha.getText())) {
+    							FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
+    							fPrincipalLibras.setVisible(true);
+    							
+    						}else {
+    							JOptionPane.showMessageDialog(null, "Senha Incorreta","ERRO!!!",JOptionPane.ERROR_MESSAGE);
+    						}
+    					}else {
+    						JOptionPane.showMessageDialog(null, "Usuario Incorreto","ERRO!!!",JOptionPane.ERROR_MESSAGE);
+    					}
     					
+    				}else {
+    					JOptionPane.showMessageDialog(null, "Problema com Retorno da Informações","ERRO!!!",JOptionPane.ERROR_MESSAGE);
     				}
     			}catch (Exception e) {
 					// TODO: handle exception
     				e.printStackTrace();
 				}
     			
-//    			FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
-//    			fPrincipalLibras.setVisible(true);
     			dispose();
     		}else {
-    			JOptionPane.showMessageDialog(null, "Você Tem que Informar Uma Senha!", "Atenção" , JOptionPane.INFORMATION_MESSAGE);
+    			JOptionPane.showMessageDialog(null, "Você Tem que Informar Uma Senha!", "ATENÇÂO!!" , JOptionPane.INFORMATION_MESSAGE);
     		}
     	}else {
     		JOptionPane.showMessageDialog(null, "Você Tem que Informar Um Usuario!", "Atenção" , JOptionPane.INFORMATION_MESSAGE);
