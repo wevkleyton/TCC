@@ -23,7 +23,19 @@ public class LoginLibras extends javax.swing.JFrame {
     /**
      * Creates new form LoginLibras
      */
-    public LoginLibras() {
+	
+	private static String tipoAtivo;
+	
+	
+    public String getTipoAtivo() {
+		return tipoAtivo;
+	}
+
+	public void setTipoAtivo(String tipoAtivo) {
+		this.tipoAtivo = tipoAtivo;
+	}
+
+	public LoginLibras() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -155,7 +167,7 @@ public class LoginLibras extends javax.swing.JFrame {
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         // TODO add your handling code here:
 
-    	String resultQueryNome = null,resultQuerySenha = null;
+    /*	String resultQueryNome = null,resultQuerySenha = null;
     	if (!jTextFieldNome.getText().isEmpty()) {
     		if(!jPasswordFieldSenha.getText().isEmpty()) {
     			try {
@@ -163,15 +175,17 @@ public class LoginLibras extends javax.swing.JFrame {
     				while (resultNome.next()) {
     					resultQueryNome = resultNome.getString("nome");
     				}
-    				ResultSet resultSenha = ConectaJDBC.Conecta("select nome from usuario where nome = '" + jTextFieldNome.getText() + "'");
-    				while (resultNome.next()) {
-    					resultQuerySenha = resultNome.getString("senha");
+					ResultSet resultSenha = ConectaJDBC.Conecta("select senha from usuario where nome = '" + jTextFieldNome.getText() + "'");
+    				while (resultSenha.next()) {
+    					resultQuerySenha = resultSenha.getString("senha");
     				}
     				if (!resultQueryNome.isEmpty() || !resultQuerySenha.isEmpty() ) {
-    					if (resultQueryNome == jTextFieldNome.getText()) {
-    						if (resultQuerySenha == ConsultaSHA.geraHasSenha(jPasswordFieldSenha.getText())) {
-    							FPrincipalLibras fPrincipalLibras = new FPrincipalLibras();
-    							fPrincipalLibras.setVisible(true);
+    					if (jTextFieldNome.getText().equals(resultQueryNome)) {
+    						String senha = ConsultaSHA.geraHasSenha(jPasswordFieldSenha.getText());
+    						if (senha.equals(resultQuerySenha)) {
+    							FImagens fimagens = new FImagens();
+    							fimagens.setVisible(true);
+    							dispose();
     							
     						}else {
     							JOptionPane.showMessageDialog(null, "Senha Incorreta","ERRO!!!",JOptionPane.ERROR_MESSAGE);
@@ -188,14 +202,18 @@ public class LoginLibras extends javax.swing.JFrame {
     				e.printStackTrace();
 				}
     			
-    			dispose();
     		}else {
     			JOptionPane.showMessageDialog(null, "Você Tem que Informar Uma Senha!", "ATENÇÂO!!" , JOptionPane.INFORMATION_MESSAGE);
     		}
     	}else {
     		JOptionPane.showMessageDialog(null, "Você Tem que Informar Um Usuario!", "Atenção" , JOptionPane.INFORMATION_MESSAGE);
     		
-    	}
+    	}*/
+    	setTipoAtivo("A");
+    	FImagens fimagens = new FImagens();
+		fimagens.setVisible(true);
+		dispose();
+    	
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     /**

@@ -10,7 +10,7 @@ import javax.swing.JFileChooser;
 
 import br.com.libras.dao.ConectaJDBC;
 
-public class BasicBOImpl {
+public class AddImagem {
     
 
 	public void updateImagem() {
@@ -24,7 +24,7 @@ public class BasicBOImpl {
 			File file = jFileChooser.getSelectedFile();
 			
 			byte[] imagem = new byte[(int) file.length()];
-			System.out.println("lendo imagem" + imagem.length + "bytes...");
+			System.out.println("lendo imagem " + imagem.length + " bytes...");
 			DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
 			dataInputStream.readFully(imagem);
 			dataInputStream.close();
@@ -42,7 +42,7 @@ public class BasicBOImpl {
 	}
 	
 	public static void main(String[] args) {
-		BasicBOImpl basicBOImpl = new BasicBOImpl();
+		AddImagem basicBOImpl = new AddImagem();
 		basicBOImpl.updateImagem();
 	}
 
