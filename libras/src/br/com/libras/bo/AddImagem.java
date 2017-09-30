@@ -13,8 +13,8 @@ import br.com.libras.dao.ConectaJDBC;
 public class AddImagem {
     
 
-	public void updateImagem() {
-		
+	public String updateImagem() {
+		String path = null;
 		
 		try {
 			
@@ -23,12 +23,13 @@ public class AddImagem {
 			int retorno = jFileChooser.showOpenDialog(null);	
 			File file = jFileChooser.getSelectedFile();
 			
-			byte[] imagem = new byte[(int) file.length()];
-			System.out.println("lendo imagem " + imagem.length + " bytes...");
-			DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
-			dataInputStream.readFully(imagem);
-			dataInputStream.close();
-			ConectaJDBC.Conecta("insert into imagem values (1,)");
+//			byte[] imagem = new byte[(int) file.length()];
+//			System.out.println("lendo imagem " + imagem.length + " bytes...");
+//			DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
+			path = file.getAbsolutePath();
+//			dataInputStream.readFully(imagem);
+//			dataInputStream.close();
+//			ConectaJDBC.Conecta("insert into imagem values (1,)");
 			
 			
 
@@ -39,11 +40,12 @@ public class AddImagem {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return path;
 	}
 	
 	public static void main(String[] args) {
 		AddImagem basicBOImpl = new AddImagem();
-		basicBOImpl.updateImagem();
+		System.out.println(basicBOImpl.updateImagem());
 	}
 
 }

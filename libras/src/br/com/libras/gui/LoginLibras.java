@@ -24,16 +24,6 @@ public class LoginLibras extends javax.swing.JFrame {
      * Creates new form LoginLibras
      */
 	
-	private static String tipoAtivo;
-	
-	
-    public String getTipoAtivo() {
-		return tipoAtivo;
-	}
-
-	public void setTipoAtivo(String tipoAtivo) {
-		this.tipoAtivo = tipoAtivo;
-	}
 
 	public LoginLibras() {
         initComponents();
@@ -209,8 +199,7 @@ public class LoginLibras extends javax.swing.JFrame {
     		JOptionPane.showMessageDialog(null, "Você Tem que Informar Um Usuario!", "Atenção" , JOptionPane.INFORMATION_MESSAGE);
     		
     	}*/
-    	setTipoAtivo("A");
-    	FImagens fimagens = new FImagens();
+    	FImagens fimagens = new FImagens("A");
 		fimagens.setVisible(true);
 		dispose();
     	

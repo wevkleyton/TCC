@@ -11,16 +11,16 @@ public class ConectaJDBC {
 	public static ResultSet Conecta(String query) {
 		ResultSet result = null;
 		try {
-			/*
+			
 			String url = "jdbc:postgresql://172.16.98.130:5432/libras";
 			String usuario = "dbadmin";
 			String senha = "123456";
-			*/  
+			 
 			
 //			configuração localhost
-			String url = "jdbc:postgresql://localhost:5432/libras";  
+			/*String url = "jdbc:postgresql://localhost:5432/libras";  
 			String usuario = "postgres";  
-			String senha = "123456";  
+			String senha = "123456";*/  
 			
 			Class.forName("org.postgresql.Driver");
 			

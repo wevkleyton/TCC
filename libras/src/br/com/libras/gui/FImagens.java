@@ -5,7 +5,10 @@
  */
 package br.com.libras.gui;
 
+import java.sql.ResultSet;
+
 import br.com.libras.bo.AddImagem;
+import br.com.libras.dao.ConectaJDBC;
 
 /**
  *
@@ -17,12 +20,28 @@ public class FImagens extends javax.swing.JFrame {
      * Creates new form FImagens
      */
 	
-	
+	private String ativo;
+			
+	public String getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(String ativo) {
+		this.ativo = ativo;
+	}
+
 	public FImagens() {
         initComponents();
         ativaBotton();
         setLocationRelativeTo(null);
     }
+	
+	public FImagens(String ativo) {
+		setAtivo(ativo);
+		initComponents();
+        ativaBotton();
+        setLocationRelativeTo(null);
+	}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,7 +57,7 @@ public class FImagens extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldDescricao = new javax.swing.JTextField();
         jButtonPesquisa = new javax.swing.JButton();
         jButtonInicia = new javax.swing.JButton();
         jButtonRecarregar = new javax.swing.JButton();
@@ -110,7 +129,7 @@ public class FImagens extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 212;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        jPanel1.add(jTextField1, gridBagConstraints);
+        jPanel1.add(jTextFieldDescricao, gridBagConstraints);
 
         jButtonPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/libras/resources/search.png"))); // NOI18N
         jButtonPesquisa.setMnemonic('p');
@@ -223,6 +242,14 @@ public class FImagens extends javax.swing.JFrame {
 
     private void jButtonPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisaActionPerformed
         // TODO add your handling code here:
+    	try {
+    		ResultSet retorno = ConectaJDBC.Conecta("Select * from imagem where descricao = '" + jTextFieldDescricao.getText()+ "'");
+    		while (retorno.next()) {
+    		}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
     	
 
     }//GEN-LAST:event_jButtonPesquisaActionPerformed
@@ -238,8 +265,8 @@ public class FImagens extends javax.swing.JFrame {
 
     private void jButtonAddImagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddImagensActionPerformed
         // TODO add your handling code here:
-    	AddImagem addImagem = new AddImagem();
-    	addImagem.updateImagem();
+    	FAddImagem addImagem = new FAddImagem(null, rootPaneCheckingEnabled);
+    	addImagem.setVisible(true);
     }//GEN-LAST:event_jButtonAddImagensActionPerformed
 
     private void jButtonSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSobreActionPerformed
@@ -247,6 +274,13 @@ public class FImagens extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSobreActionPerformed
     
     public void ativaBotton() {
+    	
+    	System.out.println(getAtivo());
+    	if (getAtivo().equals("A")) {
+    		jButtonAddImagens.setEnabled(true);
+    	}else {
+    		jButtonAddImagens.setEnabled(false);
+    	}
     	
     }
 
@@ -297,6 +331,6 @@ public class FImagens extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldDescricao;
     // End of variables declaration//GEN-END:variables
 }
