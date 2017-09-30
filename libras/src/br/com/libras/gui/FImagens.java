@@ -54,14 +54,16 @@ public class FImagens extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel5 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelImagem = new javax.swing.JPanel();
+        jLabelImagem = new javax.swing.JLabel();
+        jPanelVideo = new javax.swing.JPanel();
+        jLabelVideo = new javax.swing.JLabel();
+        jPanelPesquisa = new javax.swing.JPanel();
         jTextFieldDescricao = new javax.swing.JTextField();
         jButtonPesquisa = new javax.swing.JButton();
         jButtonInicia = new javax.swing.JButton();
         jButtonRecarregar = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        jPanelAddImagem = new javax.swing.JPanel();
         jButtonSair = new javax.swing.JButton();
         jButtonSobre = new javax.swing.JButton();
         jButtonAddImagens = new javax.swing.JButton();
@@ -71,18 +73,24 @@ public class FImagens extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
         jPanel5.setLayout(new java.awt.GridBagLayout());
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Imagem"));
-        jPanel2.setPreferredSize(new java.awt.Dimension(151, 153));
+        jPanelImagem.setBorder(javax.swing.BorderFactory.createTitledBorder("Imagem"));
+        jPanelImagem.setPreferredSize(new java.awt.Dimension(151, 153));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 297, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanelImagemLayout = new javax.swing.GroupLayout(jPanelImagem);
+        jPanelImagem.setLayout(jPanelImagemLayout);
+        jPanelImagemLayout.setHorizontalGroup(
+            jPanelImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelImagemLayout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(jLabelImagem)
+                .addContainerGap(169, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 231, Short.MAX_VALUE)
+        jPanelImagemLayout.setVerticalGroup(
+            jPanelImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelImagemLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addComponent(jLabelImagem)
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -94,20 +102,26 @@ public class FImagens extends javax.swing.JFrame {
         gridBagConstraints.weightx = 40.0;
         gridBagConstraints.weighty = 100.0;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        jPanel5.add(jPanel2, gridBagConstraints);
+        jPanel5.add(jPanelImagem, gridBagConstraints);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Video"));
-        jPanel3.setPreferredSize(new java.awt.Dimension(151, 153));
+        jPanelVideo.setBorder(javax.swing.BorderFactory.createTitledBorder("Video"));
+        jPanelVideo.setPreferredSize(new java.awt.Dimension(151, 153));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanelVideoLayout = new javax.swing.GroupLayout(jPanelVideo);
+        jPanelVideo.setLayout(jPanelVideoLayout);
+        jPanelVideoLayout.setHorizontalGroup(
+            jPanelVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelVideoLayout.createSequentialGroup()
+                .addGap(96, 96, 96)
+                .addComponent(jLabelVideo)
+                .addContainerGap(178, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 231, Short.MAX_VALUE)
+        jPanelVideoLayout.setVerticalGroup(
+            jPanelVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelVideoLayout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(jLabelVideo)
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -119,17 +133,17 @@ public class FImagens extends javax.swing.JFrame {
         gridBagConstraints.weightx = 40.0;
         gridBagConstraints.weighty = 100.0;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        jPanel5.add(jPanel3, gridBagConstraints);
+        jPanel5.add(jPanelVideo, gridBagConstraints);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        jPanelPesquisa.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelPesquisa.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 212;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        jPanel1.add(jTextFieldDescricao, gridBagConstraints);
+        jPanelPesquisa.add(jTextFieldDescricao, gridBagConstraints);
 
         jButtonPesquisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/libras/resources/search.png"))); // NOI18N
         jButtonPesquisa.setMnemonic('p');
@@ -139,7 +153,7 @@ public class FImagens extends javax.swing.JFrame {
                 jButtonPesquisaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonPesquisa, new java.awt.GridBagConstraints());
+        jPanelPesquisa.add(jButtonPesquisa, new java.awt.GridBagConstraints());
 
         jButtonInicia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/libras/resources/play_20x20.png"))); // NOI18N
         jButtonInicia.setMnemonic('i');
@@ -152,12 +166,12 @@ public class FImagens extends javax.swing.JFrame {
                 jButtonIniciaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonInicia, new java.awt.GridBagConstraints());
+        jPanelPesquisa.add(jButtonInicia, new java.awt.GridBagConstraints());
 
         jButtonRecarregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/libras/resources/reload_20x20.png"))); // NOI18N
         jButtonRecarregar.setMnemonic('r');
         jButtonRecarregar.setText("Recarregar");
-        jPanel1.add(jButtonRecarregar, new java.awt.GridBagConstraints());
+        jPanelPesquisa.add(jButtonRecarregar, new java.awt.GridBagConstraints());
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -167,10 +181,10 @@ public class FImagens extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 1;
         gridBagConstraints.ipady = 1;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        jPanel5.add(jPanel1, gridBagConstraints);
+        jPanel5.add(jPanelPesquisa, gridBagConstraints);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel4.setLayout(new java.awt.GridBagLayout());
+        jPanelAddImagem.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelAddImagem.setLayout(new java.awt.GridBagLayout());
 
         jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/libras/resources/errors_20x20.png"))); // NOI18N
         jButtonSair.setMnemonic('s');
@@ -185,7 +199,7 @@ public class FImagens extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        jPanel4.add(jButtonSair, gridBagConstraints);
+        jPanelAddImagem.add(jButtonSair, gridBagConstraints);
 
         jButtonSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/libras/resources/exclamacoa_20x20.png"))); // NOI18N
         jButtonSobre.setText("Sobre");
@@ -200,7 +214,7 @@ public class FImagens extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        jPanel4.add(jButtonSobre, gridBagConstraints);
+        jPanelAddImagem.add(jButtonSobre, gridBagConstraints);
 
         jButtonAddImagens.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/libras/resources/add-icon.png"))); // NOI18N
         jButtonAddImagens.setText("Add Imagens");
@@ -215,7 +229,7 @@ public class FImagens extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        jPanel4.add(jButtonAddImagens, gridBagConstraints);
+        jPanelAddImagem.add(jButtonAddImagens, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -224,7 +238,7 @@ public class FImagens extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 1;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        jPanel5.add(jPanel4, gridBagConstraints);
+        jPanel5.add(jPanelAddImagem, gridBagConstraints);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -242,11 +256,14 @@ public class FImagens extends javax.swing.JFrame {
 
     private void jButtonPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisaActionPerformed
         // TODO add your handling code here:
+    	String imagem;
     	try {
     		ResultSet retorno = ConectaJDBC.Conecta("Select * from imagem where descricao = '" + jTextFieldDescricao.getText()+ "'");
     		while (retorno.next()) {
+    			imagem =  retorno.getString("imagem");
     		}
-			
+    		
+			jLabelImagem.setIconTextGap(imagem);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -326,11 +343,13 @@ public class FImagens extends javax.swing.JFrame {
     private javax.swing.JButton jButtonRecarregar;
     private javax.swing.JButton jButtonSair;
     private javax.swing.JButton jButtonSobre;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jLabelImagem;
+    private javax.swing.JLabel jLabelVideo;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanelAddImagem;
+    private javax.swing.JPanel jPanelImagem;
+    private javax.swing.JPanel jPanelPesquisa;
+    private javax.swing.JPanel jPanelVideo;
     private javax.swing.JTextField jTextFieldDescricao;
     // End of variables declaration//GEN-END:variables
 }

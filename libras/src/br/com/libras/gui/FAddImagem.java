@@ -6,6 +6,7 @@
 package br.com.libras.gui;
 
 import br.com.libras.bo.AddImagem;
+import br.com.libras.dao.ConectaJDBC;
 
 /**
  *
@@ -227,6 +228,10 @@ public class FAddImagem extends javax.swing.JDialog {
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         // TODO add your handling code here:
+    	ConectaJDBC.Conecta("INSERT INTO imagem VALUES (nextval('imagem_id_seq'::regclass),"
+    			+ "'" + jTextFieldDescricao.getText() + "'"
+    			+ ",lo_import('"
+    			+ getPathImagem()+ "'))");
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     /**
