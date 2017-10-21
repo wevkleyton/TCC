@@ -5,7 +5,10 @@
  */
 package br.com.libras.gui;
 
+import java.sql.Blob;
 import java.sql.ResultSet;
+
+import javax.swing.ImageIcon;
 
 import br.com.libras.bo.AddImagem;
 import br.com.libras.dao.ConectaJDBC;
@@ -256,14 +259,19 @@ public class FImagens extends javax.swing.JFrame {
 
     private void jButtonPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisaActionPerformed
         // TODO add your handling code here:
-    	String imagem;
+    	Blob image = null;
+    	byte[] imagemByte;
     	try {
-    		ResultSet retorno = ConectaJDBC.Conecta("Select * from imagem where descricao = '" + jTextFieldDescricao.getText()+ "'");
-    		while (retorno.next()) {
-    			imagem =  retorno.getString("imagem");
+    		String query = "select imagem from imagem where descricao = '" + jTextFieldDescricao.getText() + "'";
+    		System.out.println(query);
+    		ResultSet retorno = ConectaJDBC.Conecta(query);
+    		if (retorno.next()) {
+    			image = retorno.getBlob("imagem");
+    			imagemByte = image.getBytes(1, (int) image.length());
+    			ImageIcon icon =  new ImageIcon(imagemByte);
+    			System.out.println("teste" + imagemByte);
     		}
     		
-			jLabelImagem.setIconTextGap(imagem);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -291,14 +299,11 @@ public class FImagens extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSobreActionPerformed
     
     public void ativaBotton() {
-    	
-    	System.out.println(getAtivo());
     	if (getAtivo().equals("A")) {
     		jButtonAddImagens.setEnabled(true);
     	}else {
     		jButtonAddImagens.setEnabled(false);
     	}
-    	
     }
 
     /**
