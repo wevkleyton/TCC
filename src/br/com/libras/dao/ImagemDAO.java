@@ -3,7 +3,13 @@ package br.com.libras.dao;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.sql.Blob;
 import java.sql.ResultSet;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
+import org.hibernate.metamodel.domain.Superclass;
 
 /**
  * 
@@ -16,7 +22,7 @@ import java.sql.ResultSet;
 public class ImagemDAO {
 
 	public static boolean salvarImagen(String imagem) {
-		String query = "update ";
+		String query = "insert into imagem (id, descricao, imagem, video) values ()  ";
 		try {
 			ResultSet result = ConectaJDBC.Conecta(query);
 			File imagemFile = new File(imagem);
@@ -31,5 +37,29 @@ public class ImagemDAO {
 		}
 		
 		return true;
+	}
+	
+	private static boolean selectImagem(String descricao) {
+		String query = "select imagem from imagem where descricao = '" + descricao + "'";
+		
+		System.out.println(query);
+		try {
+			ResultSet  resultado = ConectaJDBC.Conecta(query);
+			if(resultado.next()) {
+				Blob blob = resultado.getBlob(1);
+				ImageIcon icon = new ImageIcon(blob.getBytes(1, (int) blob.length()));
+				System.out.println(icon);
+				JFrame frame = new JFrame();
+				frame.setVisible(true);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return true;
+		
+	}
+	
+	public static void main(String[] args) {
+		selectImagem("açai");
 	}
 }
