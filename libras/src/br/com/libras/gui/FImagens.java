@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 
 import br.com.libras.bo.AddImagem;
 import br.com.libras.dao.ConectaJDBC;
+import br.com.libras.dao.ImagemDAO;
 
 /**
  *
@@ -79,21 +80,17 @@ public class FImagens extends javax.swing.JFrame {
         jPanelImagem.setBorder(javax.swing.BorderFactory.createTitledBorder("Imagem"));
         jPanelImagem.setPreferredSize(new java.awt.Dimension(151, 153));
 
+        jLabelImagem.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
         javax.swing.GroupLayout jPanelImagemLayout = new javax.swing.GroupLayout(jPanelImagem);
         jPanelImagem.setLayout(jPanelImagemLayout);
         jPanelImagemLayout.setHorizontalGroup(
             jPanelImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelImagemLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabelImagem)
-                .addContainerGap(169, Short.MAX_VALUE))
+            .addComponent(jLabelImagem, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
         );
         jPanelImagemLayout.setVerticalGroup(
             jPanelImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelImagemLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(jLabelImagem)
-                .addContainerGap(137, Short.MAX_VALUE))
+            .addComponent(jLabelImagem, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -114,17 +111,11 @@ public class FImagens extends javax.swing.JFrame {
         jPanelVideo.setLayout(jPanelVideoLayout);
         jPanelVideoLayout.setHorizontalGroup(
             jPanelVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelVideoLayout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(jLabelVideo)
-                .addContainerGap(178, Short.MAX_VALUE))
+            .addComponent(jLabelVideo, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
         );
         jPanelVideoLayout.setVerticalGroup(
             jPanelVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelVideoLayout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(jLabelVideo)
-                .addContainerGap(145, Short.MAX_VALUE))
+            .addComponent(jLabelVideo, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -247,7 +238,9 @@ public class FImagens extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,19 +252,11 @@ public class FImagens extends javax.swing.JFrame {
 
     private void jButtonPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisaActionPerformed
         // TODO add your handling code here:
-    	Blob image = null;
-    	byte[] imagemByte;
     	try {
-    		String query = "select imagem from imagem where descricao = '" + jTextFieldDescricao.getText() + "'";
-    		System.out.println(query);
-    		ResultSet retorno = ConectaJDBC.Conecta(query);
-    		if (retorno.next()) {
-    			image = retorno.getBlob("imagem");
-    			imagemByte = image.getBytes(1, (int) image.length());
-    			ImageIcon icon =  new ImageIcon(imagemByte);
-    			System.out.println("teste" + imagemByte);
-    		}
+    		ImagemDAO pesquisa = new ImagemDAO();
+    		jLabelImagem.setIcon(pesquisa.getFile(jTextFieldDescricao.getText()));
     		
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

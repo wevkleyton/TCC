@@ -1,4 +1,4 @@
-/* Seleção de usuario*/
+﻿/* Seleção de usuario*/
 select * from usuario
 /* Inclusão de usuario*/
 insert into usuario values (nextval('imagem_id_seq'::regclass),'wev','7c4a8d09ca3762af61e59520943dc26494f8941b','U');
@@ -11,7 +11,7 @@ delete from usuario
 alter table usuario  alter column senha type character varying(100)
 
 -- Cria auto encremento 
-CREATE SEQUENCE imagem_id_seq
+CREATE SEQUENCE img_id_seq
  INCREMENT 1
  MINVALUE 1
  MAXVALUE 9223372036854775807
@@ -26,7 +26,7 @@ ALTER SEQUENCE libras.usuario_id_seq
  RESTART 1
  CACHE 1;
   
-ALTER TABLE imagem ALTER COLUMN id SET DEFAULT NEXTVAL('imagem_id_seq') ;
+ALTER TABLE imagens ALTER COLUMN id SET DEFAULT NEXTVAL('img_id_seq') ;
 
 
 

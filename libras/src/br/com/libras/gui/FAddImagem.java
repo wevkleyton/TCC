@@ -5,8 +5,13 @@
  */
 package br.com.libras.gui;
 
+import java.io.File;
+
+import javax.swing.JOptionPane;
+
 import br.com.libras.bo.AddImagem;
 import br.com.libras.dao.ConectaJDBC;
+import br.com.libras.dao.ImagemDAO;
 
 /**
  *
@@ -227,11 +232,22 @@ public class FAddImagem extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-        // TODO add your handling code here:
-    	ConectaJDBC.Conecta("INSERT INTO imagem VALUES (nextval('imagem_id_seq'::regclass),"
-    			+ "'" + jTextFieldDescricao.getText() + "'"
-    			+ ",lo_import('"
-    			+ getPathImagem()+ "'))");
+    	try {
+    		ImagemDAO imagem = new ImagemDAO();
+    		File file1 = new File(getPathImagem());
+    		File file2 = new File(getPathVideo());
+    		
+    		imagem.insertFile(file1, file2, jTextFieldDescricao.getText());
+    		
+    		jTextFieldDescricao.setText("");
+    		jTextFieldImagem.setText("");
+    		jTextFieldVideo.setText("");
+    		JOptionPane.showMessageDialog(null, "Imagem e Video Salvos com Sucesso!");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     /**
