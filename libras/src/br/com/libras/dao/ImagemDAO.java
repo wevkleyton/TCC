@@ -3,6 +3,7 @@ package br.com.libras.dao;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -65,23 +66,24 @@ public class ImagemDAO {
 	    return false;
 	}
 	
-	public ImageIcon getFile( String descricao ) throws SQLException{
+	public ImageIcon getFile( String descricao ) throws SQLException, IOException{
 		  ImageIcon icon = null;
 	    Connection c = ConectaJDBC.getConnection();
 	    File f = null;
 	    try {
-	        PreparedStatement ps = c.prepareStatement("SELECT descricao, imagem FROM imagens WHERE descricao = ?");
+	        PreparedStatement ps = c.prepareStatement("SELECT descricao, imagem, video FROM imagens WHERE descricao = ?");
 	        ps.setString(1, descricao);
 	        ResultSet rs = ps.executeQuery();
 	        if ( rs.next() ){
 	            byte [] bytes = rs.getBytes("imagem");
 	            String nome = rs.getString("descricao");
+	            byte [] bytes2 = rs.getBytes("video");
 	 
-	            //converte o array de bytes em file
-//	            f = new File( "/tmp/" + nome );
-//	            FileOutputStream fos = new FileOutputStream( f);
-//	            fos.write( bytes );
-//	            fos.close();
+
+	            f = new File( "/tmp/teste.mp4");
+	            FileOutputStream fos = new FileOutputStream( f);
+	            fos.write( bytes2 );
+	            fos.close();
 	            
 	            icon = new ImageIcon(bytes);
 	            
@@ -96,7 +98,7 @@ public class ImagemDAO {
 	return null;
 	}
 	
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, IOException {
 		ImagemDAO imagem = new ImagemDAO();
 		
 		imagem.getFile("teste2");

@@ -56,7 +56,7 @@ public class ExecVideo {
 	 */
 	private Frame buildFrame(final Canvas videoSurface) {
 		final Frame f = new Frame("Test Player");
-		f.setSize(800, 600);
+		f.setSize(300, 300);
 		f.addWindowListener(new WindowAdapter() {
 
 			@Override
@@ -98,9 +98,9 @@ public class ExecVideo {
 	public static void main(String[] args) throws InterruptedException {
 		ExecVideo player = new ExecVideo();
 		// Pode ser MP4, AVI, MOV, MKV, WMA, MPG, MP3, WAV, etc.
-		player.play("/tmp/açai.MOV");
+		player.play("/tmp/açai.mp4");
 
 		// Aguarda janela do player ser fechada
-		Thread.currentThread().join();
+		//Thread.currentThread().join();
 	}
 }
