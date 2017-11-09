@@ -1,5 +1,6 @@
 package br.com.libras.dao;
 
+import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -68,6 +69,8 @@ public class ImagemDAO {
 	
 	public ImageIcon getFile( String descricao ) throws SQLException, IOException{
 		  ImageIcon icon = null;
+		  File video = null;
+		  
 	    Connection c = ConectaJDBC.getConnection();
 	    File f = null;
 	    try {
@@ -80,12 +83,15 @@ public class ImagemDAO {
 	            byte [] bytes2 = rs.getBytes("video");
 	 
 
-	            f = new File( "/tmp/teste.mp4");
+	            f = new File( "/tmp/"+ nome.trim() +".avi");
+	            ByteArrayOutputStream bytaout = new ByteArrayOutputStream();
 	            FileOutputStream fos = new FileOutputStream( f);
-	            fos.write( bytes2 );
-	            fos.close();
-	            
+	            	fos.write( bytes2 );
+	            	fos.close();
+
+	            	
 	            icon = new ImageIcon(bytes);
+//	            video = new File(bytes2);
 	            
 	        }
 	        rs.close();
@@ -101,6 +107,6 @@ public class ImagemDAO {
 	public static void main(String[] args) throws SQLException, IOException {
 		ImagemDAO imagem = new ImagemDAO();
 		
-		imagem.getFile("teste2");
+		imagem.getFile("acai");
 	}
 }

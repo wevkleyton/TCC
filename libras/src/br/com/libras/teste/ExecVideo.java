@@ -95,12 +95,12 @@ public class ExecVideo {
 		return mediaPlayer;
 	}
 
-	public static void main(String[] args) throws InterruptedException {
-		ExecVideo player = new ExecVideo();
-		// Pode ser MP4, AVI, MOV, MKV, WMA, MPG, MP3, WAV, etc.
-		player.play("/tmp/açai.mp4");
-
-		// Aguarda janela do player ser fechada
-		//Thread.currentThread().join();
-	}
+//	public static void main(String[] args) throws InterruptedException {
+//		ExecVideo player = new ExecVideo();
+//		// Pode ser MP4, AVI, MOV, MKV, WMA, MPG, MP3, WAV, etc.
+//		player.play("/tmp/açai.mp4");
+//
+//		// Aguarda janela do player ser fechada
+//		//Thread.currentThread().join();
+//	}
 }

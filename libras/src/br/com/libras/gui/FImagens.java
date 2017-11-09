@@ -79,19 +79,17 @@ public class FImagens extends javax.swing.JFrame {
 
         jPanelImagem.setBorder(javax.swing.BorderFactory.createTitledBorder("Imagem"));
         jPanelImagem.setPreferredSize(new java.awt.Dimension(151, 153));
+        jPanelImagem.setLayout(new java.awt.GridBagLayout());
 
         jLabelImagem.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        javax.swing.GroupLayout jPanelImagemLayout = new javax.swing.GroupLayout(jPanelImagem);
-        jPanelImagem.setLayout(jPanelImagemLayout);
-        jPanelImagemLayout.setHorizontalGroup(
-            jPanelImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelImagem, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
-        );
-        jPanelImagemLayout.setVerticalGroup(
-            jPanelImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelImagem, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 297;
+        gridBagConstraints.ipady = 231;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanelImagem.add(jLabelImagem, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -106,17 +104,15 @@ public class FImagens extends javax.swing.JFrame {
 
         jPanelVideo.setBorder(javax.swing.BorderFactory.createTitledBorder("Video"));
         jPanelVideo.setPreferredSize(new java.awt.Dimension(151, 153));
-
-        javax.swing.GroupLayout jPanelVideoLayout = new javax.swing.GroupLayout(jPanelVideo);
-        jPanelVideo.setLayout(jPanelVideoLayout);
-        jPanelVideoLayout.setHorizontalGroup(
-            jPanelVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelVideo, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
-        );
-        jPanelVideoLayout.setVerticalGroup(
-            jPanelVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelVideo, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-        );
+        jPanelVideo.setLayout(new java.awt.GridBagLayout());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 298;
+        gridBagConstraints.ipady = 231;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanelVideo.add(jLabelVideo, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -238,9 +234,7 @@ public class FImagens extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
