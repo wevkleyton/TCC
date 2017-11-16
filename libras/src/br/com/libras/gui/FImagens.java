@@ -7,8 +7,10 @@ package br.com.libras.gui;
 
 import java.sql.Blob;
 import java.sql.ResultSet;
+import java.util.List;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 import br.com.libras.bo.AddImagem;
 import br.com.libras.dao.ConectaJDBC;
@@ -24,14 +26,14 @@ public class FImagens extends javax.swing.JFrame {
      * Creates new form FImagens
      */
 	
-	private String ativo;
+	private String tipo;
 			
-	public String getAtivo() {
-		return ativo;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setAtivo(String ativo) {
-		this.ativo = ativo;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public FImagens() {
@@ -40,10 +42,11 @@ public class FImagens extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 	
-	public FImagens(String ativo) {
-		setAtivo(ativo);
+	public FImagens(String tipo) {
+		setTipo(tipo);
 		initComponents();
         ativaBotton();
+        setResizable(false);
         setLocationRelativeTo(null);
 	}
 
@@ -65,8 +68,6 @@ public class FImagens extends javax.swing.JFrame {
         jPanelPesquisa = new javax.swing.JPanel();
         jTextFieldDescricao = new javax.swing.JTextField();
         jButtonPesquisa = new javax.swing.JButton();
-        jButtonInicia = new javax.swing.JButton();
-        jButtonRecarregar = new javax.swing.JButton();
         jPanelAddImagem = new javax.swing.JPanel();
         jButtonSair = new javax.swing.JButton();
         jButtonSobre = new javax.swing.JButton();
@@ -80,14 +81,11 @@ public class FImagens extends javax.swing.JFrame {
         jPanelImagem.setBorder(javax.swing.BorderFactory.createTitledBorder("Imagem"));
         jPanelImagem.setPreferredSize(new java.awt.Dimension(151, 153));
         jPanelImagem.setLayout(new java.awt.GridBagLayout());
-
-        jLabelImagem.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 297;
-        gridBagConstraints.ipady = 231;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 3;
+        gridBagConstraints.ipady = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanelImagem.add(jLabelImagem, gridBagConstraints);
 
@@ -102,15 +100,16 @@ public class FImagens extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(jPanelImagem, gridBagConstraints);
 
-        jPanelVideo.setBorder(javax.swing.BorderFactory.createTitledBorder("Video"));
+        jPanelVideo.setBorder(javax.swing.BorderFactory.createTitledBorder("Imagem"));
         jPanelVideo.setPreferredSize(new java.awt.Dimension(151, 153));
         jPanelVideo.setLayout(new java.awt.GridBagLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 298;
-        gridBagConstraints.ipady = 231;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 3;
+        gridBagConstraints.ipady = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanelVideo.add(jLabelVideo, gridBagConstraints);
 
@@ -144,24 +143,6 @@ public class FImagens extends javax.swing.JFrame {
             }
         });
         jPanelPesquisa.add(jButtonPesquisa, new java.awt.GridBagConstraints());
-
-        jButtonInicia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/libras/resources/play_20x20.png"))); // NOI18N
-        jButtonInicia.setMnemonic('i');
-        jButtonInicia.setText("Iniciar");
-        jButtonInicia.setMaximumSize(new java.awt.Dimension(137, 20));
-        jButtonInicia.setMinimumSize(new java.awt.Dimension(137, 20));
-        jButtonInicia.setPreferredSize(new java.awt.Dimension(137, 30));
-        jButtonInicia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonIniciaActionPerformed(evt);
-            }
-        });
-        jPanelPesquisa.add(jButtonInicia, new java.awt.GridBagConstraints());
-
-        jButtonRecarregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/libras/resources/reload_20x20.png"))); // NOI18N
-        jButtonRecarregar.setMnemonic('r');
-        jButtonRecarregar.setText("Recarregar");
-        jPanelPesquisa.add(jButtonRecarregar, new java.awt.GridBagConstraints());
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -234,7 +215,7 @@ public class FImagens extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,8 +228,16 @@ public class FImagens extends javax.swing.JFrame {
     private void jButtonPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisaActionPerformed
         // TODO add your handling code here:
     	try {
-    		ImagemDAO pesquisa = new ImagemDAO();
-    		jLabelImagem.setIcon(pesquisa.getFile(jTextFieldDescricao.getText()));
+    		if (!jTextFieldDescricao.getText().isEmpty()) {
+    			ImagemDAO pesquisa = new ImagemDAO();
+    			
+    			List<ImageIcon> retorno = pesquisa.getFile(jTextFieldDescricao.getText());
+    			jLabelImagem.setIcon(retorno.get(0));
+    			jLabelVideo.setIcon(retorno.get(1));
+    			    			
+    		}else {
+    			JOptionPane.showMessageDialog(this, "Você Tem Que Informar a Palavra", "Atenção",JOptionPane.INFORMATION_MESSAGE );
+    		}
     		
 			
 		} catch (Exception e) {
@@ -257,10 +246,6 @@ public class FImagens extends javax.swing.JFrame {
     	
 
     }//GEN-LAST:event_jButtonPesquisaActionPerformed
-
-    private void jButtonIniciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonIniciaActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
         // TODO add your handling code here:
@@ -278,12 +263,13 @@ public class FImagens extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSobreActionPerformed
     
     public void ativaBotton() {
-    	if (getAtivo().equals("A")) {
+    	if (getTipo().equals("A")) {
     		jButtonAddImagens.setEnabled(true);
     	}else {
     		jButtonAddImagens.setEnabled(false);
     	}
     }
+    
 
     /**
      * @param args the command line arguments
@@ -322,9 +308,7 @@ public class FImagens extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddImagens;
-    private javax.swing.JButton jButtonInicia;
     private javax.swing.JButton jButtonPesquisa;
-    private javax.swing.JButton jButtonRecarregar;
     private javax.swing.JButton jButtonSair;
     private javax.swing.JButton jButtonSobre;
     private javax.swing.JLabel jLabelImagem;

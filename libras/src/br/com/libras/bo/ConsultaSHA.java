@@ -33,6 +33,6 @@ public interface ConsultaSHA {
     }
     
     public static void main(String[] args) {
-		System.out.println(ConsultaSHA.geraHasSenha("123456"));
+		System.out.println(ConsultaSHA.geraHasSenha("123"));
 	}
 }

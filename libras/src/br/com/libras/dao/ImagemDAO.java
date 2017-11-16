@@ -12,8 +12,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.ImageIcon;
+
+import org.hibernate.mapping.Array;
 
 /**
  * 
@@ -33,7 +37,7 @@ public class ImagemDAO {
 
 	        PreparedStatement ps = c.prepareStatement("INSERT INTO imagens( id, descricao, imagem, video) VALUES ( nextval('img_id_seq'), ?, ? , ?)");
 	 
-	        InputStream is;
+	        InputStream is, is2;
 	        is = new FileInputStream( file1 );
 	        byte[] bytes = new byte[(int)file1.length() ];
 	        int offset = 0;
@@ -43,11 +47,12 @@ public class ImagemDAO {
 	            offset += numRead;
 	        }
 	 
+	        is2 = new FileInputStream( file2 );
 	        byte[] bytes2 = new byte[(int)file2.length() ];
 	        int offset2 = 0;
 	        int numRead2 = 0;
 	        while (offset2 < bytes2.length
-	               && (numRead2=is.read(bytes2, offset2, bytes2.length-offset2)) >= 0) {
+	               && (numRead2=is2.read(bytes2, offset2, bytes2.length-offset2)) >= 0) {
 	            offset2 += numRead2;
 	        }
 	        
@@ -67,37 +72,29 @@ public class ImagemDAO {
 	    return false;
 	}
 	
-	public ImageIcon getFile( String descricao ) throws SQLException, IOException{
-		  ImageIcon icon = null;
-		  File video = null;
+	public List<ImageIcon> getFile( String descricao ) throws SQLException, IOException{
+		  ImageIcon icon = null, video = null;
 		  
 	    Connection c = ConectaJDBC.getConnection();
 	    File f = null;
+	    List<ImageIcon> listIcon = new ArrayList<ImageIcon>();
 	    try {
 	        PreparedStatement ps = c.prepareStatement("SELECT descricao, imagem, video FROM imagens WHERE descricao = ?");
 	        ps.setString(1, descricao);
 	        ResultSet rs = ps.executeQuery();
 	        if ( rs.next() ){
 	            byte [] bytes = rs.getBytes("imagem");
-	            String nome = rs.getString("descricao");
 	            byte [] bytes2 = rs.getBytes("video");
 	 
-
-	            f = new File( "/tmp/"+ nome.trim() +".avi");
-	            ByteArrayOutputStream bytaout = new ByteArrayOutputStream();
-	            FileOutputStream fos = new FileOutputStream( f);
-	            	fos.write( bytes2 );
-	            	fos.close();
-
-	            	
 	            icon = new ImageIcon(bytes);
-//	            video = new File(bytes2);
-	            
+	            video = new ImageIcon(bytes2);
+	            listIcon.add(icon);
+	            listIcon.add(video);
 	        }
 	        rs.close();
 	        ps.close();
 	        c.close();
-	        return icon;
+	        return listIcon;
 	} catch (SQLException ex) {
 	ex.printStackTrace();
 	}
