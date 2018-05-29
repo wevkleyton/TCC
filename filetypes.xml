@@ -1,6 +1,7 @@
 <application>
   <component name="FileTypeManager" version="17">
     <extensionMap>
+      <mapping pattern="descricao" type="PLAIN_TEXT" />
       <mapping pattern="DescricaoAula2" type="PLAIN_TEXT" />
       <mapping pattern="persistence" type="XML" />
       <mapping pattern="teste" type="XML" />
