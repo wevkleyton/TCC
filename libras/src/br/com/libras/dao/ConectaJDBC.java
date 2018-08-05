@@ -3,6 +3,7 @@ package br.com.libras.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ConectaJDBC {
@@ -11,14 +12,16 @@ public class ConectaJDBC {
 	public static ResultSet Conecta(String query) {
 		ResultSet result = null;
 		try {
-			String url = "jdbc:postgresql://172.16.98.130:5432/libras";
-			String usuario = "dbadmin";
-			String senha = "123456";  
+			
+//			String url = "jdbc:postgresql://172.16.98.130:5432/libras";
+//			String usuario = "dbadmin";
+//			String senha = "123456";
+			 
 			
 //			configuração localhost
-//			String url = "jdbc:postgresql://localhost:5432/libras";  
-//			String usuario = "postgres";  
-//			String senha = "123456";  
+			String url = "jdbc:postgresql://localhost:5432/libras";  
+			String usuario = "postgres";  
+			String senha = "123456";
 			
 			Class.forName("org.postgresql.Driver");
 			
@@ -34,6 +37,17 @@ public class ConectaJDBC {
 		
 		return result;
   		
+	}
+	
+	public static Connection getConnection() throws SQLException {
+		// TODO conecta com o banco de dados
+    	String url = "jdbc:postgresql://localhost:5432/libras";  
+		String usuario = "postgres";  
+		String senha = "123456";
+		
+		Connection con;
+		con = DriverManager.getConnection(url, usuario, senha);
+		return con;
 	}
 	
 	public static void main(String[] args) {

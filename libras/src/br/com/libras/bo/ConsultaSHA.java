@@ -30,5 +30,8 @@ public interface ConsultaSHA {
             e.printStackTrace();
         }
         return senha;
-    }
+    }    
+    public static void main(String[] args) {
+		System.out.println(ConsultaSHA.geraHasSenha("123"));
+	}
 }
