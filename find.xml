@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="File '.../src/br/com/libras/controller/PesquisaController.java [tccfx]'" />
-    <option name="defaultScopeName" value="File '.../src/br/com/libras/controller/PesquisaController.java [tccfx]'" />
-    <option name="SEARCH_SCOPE" value="File '.../src/br/com/libras/controller/PesquisaController.java [tccfx]'" />
+    <option name="customScope" value="Project and Libraries" />
+    <option name="defaultScopeName" value="Project and Libraries" />
+    <option name="SEARCH_SCOPE" value="Project and Libraries" />
   </component>
 </application>
